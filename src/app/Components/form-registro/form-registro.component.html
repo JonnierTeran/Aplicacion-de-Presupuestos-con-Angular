@@ -1,0 +1,53 @@
+<form #form="ngForm" (ngSubmit)="form.valid && RegistroNuevo()">
+  <div class="agregar">
+    <div class="agregar_contenedor">
+      <select
+        (change)="TipoOp($event)"
+        class="agregar_tipo"
+        [ngClass]="{ redfocus: Tipo == 'ingreso' }"
+        [ngClass]="{ Bluefocus: Tipo == 'egreso' }"
+      >
+        <option value="ingreso">+ Ingreso</option>
+        <option value="egreso">- Egreso</option>
+      </select>
+
+      <input
+        [ngClass]="{ redfocus: Tipo == 'ingreso' }"
+        [ngClass]="{ Bluefocus: Tipo == 'egreso' }"
+        type="text"
+        class="agregar_descripcion"
+        placeholder="Registrar Ingreso // Egreso"
+        name="DescriptionInput"
+        [(ngModel)]="DescriptionInput"
+        #Des="ngModel"
+        required
+      />
+      <input
+        [ngClass]="{ redfocus: Tipo == 'ingreso' }"
+        [ngClass]="{ Bluefocus: Tipo == 'egreso' }"
+        type="number"
+        class="agregar_valor"
+        placeholder="Valor"
+        name="ValueInput"
+        [(ngModel)]="ValueInput"
+        #Val="ngModel"
+        required
+      />
+      <button
+        type="submit"
+        class="agregar_btn"
+        [disabled]="!form.valid"
+        [ngClass]="{ red: Tipo == 'ingreso' }"
+        [ngClass]="{ Blue: Tipo == 'egreso' }"
+      >
+        <i class="ion-ios-checkmark-outline"></i>
+      </button>
+      <br /><br />
+      <span
+        *ngIf="(!Des.valid && Des.touched) || (!Val.valid && Val.touched)"
+        class="Alert"
+        >{{Valid}}</span
+      >
+    </div>
+  </div>
+</form>

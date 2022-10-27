@@ -1,0 +1,31 @@
+<!--Componente Cabecera
+Recibe Los Datos de lo metodos que retornan
+Presupuesto Total
+Ingreso Total
+Egreso Total y
+Porcentaje
+Por medio de Property Binding Y Input-->
+  <app-cabecera
+  [Presupuesto]="getPresupuestoTotal()"
+  [Ingresos]="getIngresoTotal()"
+  [Egresos]="getEgresoTotal()"
+  [Porcentaje]="getPorcentajeTotal()"
+  
+  ></app-cabecera>
+
+
+<app-form-registro></app-form-registro>
+<br>
+  <div class="contenedor limpiarEstilos" id="EspacioFinal">
+     
+      <app-ingresos></app-ingresos>
+      
+    <app-egresos
+    [IngresoT]="getIngresoTotal()"
+    ></app-egresos>
+    
+  </div>
+  <br><br><br>
+ <hr>
+  
+  
