@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { EgresosModel } from './Models/EgresosModel.models.ts';
 import { IngresosModel } from './Models/IngresosModel.models.ts';
 import { EgresoService } from './Services/Egresos.service';
@@ -10,7 +10,7 @@ import { IngresoService } from './Services/Ingresos.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'presupuesto-app';
 
   /**Arreglos para almacenar los arreglos creados y registrados en los servicio */
@@ -66,8 +66,4 @@ export class AppComponent implements OnInit {
         return this.getIngresoTotal() - this.getEgresoTotal()
         
       }
-      ngOnInit(): void {}
-
-     
-
 }
