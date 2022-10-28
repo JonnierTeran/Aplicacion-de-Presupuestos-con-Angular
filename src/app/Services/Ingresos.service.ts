@@ -6,18 +6,17 @@ export class IngresoService {
   /**Se define un Array de Tipo IngresoModel */
   Ingresos: IngresosModel[];
 
-  /**Inicializamos el Arreglo con 2 objetos de Tipo IngresoModel */
+  /**Inicializamos el Arreglo con un Arrays Sin elementos */
   constructor() {
-    this.Ingresos = [
-      new IngresosModel('Salario Neto',1000),
-      new IngresosModel('Salario ',1000)
-    ];
+    this.Ingresos = [];
   }
 
+   //Se define metodo GetEliminarEgreso Para Borrar Un Registro
   getEliminarIngreso(indice:number){
     this.Ingresos.splice(indice,1);
   }
   
+   //Se define metodo GetNuevoRegistro Para Agregar Un Registro
   getNuevoRegistro(Obj:IngresosModel){
     this.Ingresos.push(Obj)
   }

@@ -5,27 +5,29 @@ Ingreso Total
 Egreso Total y
 Porcentaje
 Por medio de Property Binding Y Input-->
-  <app-cabecera
+<app-cabecera
   [Presupuesto]="getPresupuestoTotal()"
   [Ingresos]="getIngresoTotal()"
   [Egresos]="getEgresoTotal()"
-  [Porcentaje]="getPorcentajeTotal()"
-  
-  ></app-cabecera>
+  [Porcentaje]="getPorcentajeTotalEgreso()"
+></app-cabecera>
 
-
+<!--Componente Del formulario para Registrar un Egresos y/o Ingreso-->
 <app-form-registro></app-form-registro>
-<br>
-  <div class="contenedor limpiarEstilos" id="EspacioFinal">
-     
-      <app-ingresos></app-ingresos>
-      
-    <app-egresos
-    [IngresoT]="getIngresoTotal()"
-    ></app-egresos>
-    
-  </div>
-  <br><br><br>
- <hr>
-  
-  
+
+
+<!--Componentes para Ver Todos los ingresos Registrados Y Egresos-->
+<div class="contenedor limpiarEstilos" id="EspacioFinal">
+  <!--Componente para ver ingresos-->
+  <app-ingresos>
+   
+  </app-ingresos>
+
+
+  <!--Componente para ver Egresos y recibe el ingreso total
+  Para calcular el porcentaje que representa cada Egreso sobre el ingreso total-->
+  <app-egresos [IngresoT]="getIngresoTotal()"></app-egresos>
+</div>
+
+<br /><br />
+<hr />
